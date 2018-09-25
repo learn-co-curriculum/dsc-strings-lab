@@ -16,7 +16,7 @@ Follow the steps below to manipulate the strings and assign the values to the va
 
 
 ```python
-sentence = "woW WE LOVE cOdInG and strINGS!"
+sentence = "woW WE LOVE cOdInG and strINGS!".capitalize()
 sentence
 ```
 
@@ -24,7 +24,7 @@ sentence
 
 
 ```python
-flatiron_mantra = "learn. love. code."
+flatiron_mantra = "learn. love. code.".title()
 flatiron_mantra
 ```
 
@@ -32,7 +32,7 @@ flatiron_mantra
 
 
 ```python
-num_to_string = 1234
+num_to_string = str(1234)
 num_to_string
 ```
 
@@ -40,7 +40,7 @@ num_to_string
 
 
 ```python
-full_address = None + "Abc street, Hometown USA"
+full_address = num_to_string + " Abc street, Hometown USA"
 full_address
 ```
 
