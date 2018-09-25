@@ -40,7 +40,7 @@ num_to_string
 
 
 ```python
-full_address = None + "Abc street, Hometown USA"
+full_address = None + " Abc street, Hometown USA"
 full_address
 ```
 
