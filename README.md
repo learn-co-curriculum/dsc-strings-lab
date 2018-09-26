@@ -5,8 +5,9 @@
 Okay, we have learned about our first data type, the String! Now let's do a little practice with strings. We'll use the methods and functions we introduced in the previous lesson to flex our string-manipulating muscles!
 
 ## Objectives
+You will be able to:
 * Understand and use the data type, Strings
-* Understand and explain the concept of variables
+* Understand, explain and use the correct data types for various types of information (strings)
 
 ## Instructions
 
@@ -20,7 +21,7 @@ sentence = "woW WE LOVE cOdInG and strINGS!"
 sentence
 ```
 
-**2.** Next, we have our flatiron mantra, but it's not in title case like it should be! Let's fix that and use another string method that makes all strings first letter capitalized. 
+**2.** Next, we have our Flatiron mantra, but it's not in title case like it should be! Let's fix that and use another string method that makes all strings first letter capitalized. 
 
 
 ```python
