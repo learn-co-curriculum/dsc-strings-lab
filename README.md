@@ -5,8 +5,9 @@
 Okay, we have learned about our first data type, the String! Now let's do a little practice with strings. We'll use the methods and functions we introduced in the previous lesson to flex our string-manipulating muscles!
 
 ## Objectives
+You will be able to:
 * Understand and use the data type, Strings
-* Understand and explain the concept of variables
+* Understand, explain and use the correct data types for various types of information (strings)
 
 ## Instructions
 
@@ -27,7 +28,7 @@ sentence
 
 
 
-**2.** Next, we have our flatiron mantra, but it's not in title case like it should be! Let's fix that and use another string method that makes all strings first letter capitalized. 
+**2.** Next, we have our Flatiron mantra, but it's not in title case like it should be! Let's fix that and use another string method that makes all strings first letter capitalized. 
 
 
 ```python
@@ -57,7 +58,7 @@ num_to_string
 
 
 
-**4.** Finally, let's take the `num_to_string` and add it to the beginning of our street address below. We need to concatenate the variable to the beginning of our string so that we have our full address all in one string and assinged to the variable `full_address`.
+**4.** Let's take the `num_to_string` and add it to the beginning of our street address below. We need to concatenate the variable to the beginning of our string so that we have our full address all in one string and assinged to the variable `full_address`. **hint:** `None` *is a placeholder in the below code for you to edit*
 
 
 ```python
@@ -72,7 +73,7 @@ full_address
 
 
 
-5. Finally, let's replace some of the characters in a string. Let's say Bart is upset with his family and want's to be adopted by the Flanders family. How would you replace his last name?
+**5.** Finally, let's replace some of the characters in a string. Let's say Bart is upset with his family and want's to be adopted by the Flanders family. How would you replace his last name?
 
 ** Hint:** We did not directly cover this method in the lesson, but is an intuitive concept and worth noting. Check out the string helper docstring for a list of available methods. 
 
