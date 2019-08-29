@@ -6,14 +6,14 @@ Okay, we have learned about our first data type, the String! Now let's do a litt
 
 ## Objectives
 You will be able to:
-* Understand and use the data type, Strings
+* Understand and use the data type, strings
 * Understand, explain and use the correct data types for various types of information (strings)
 
 ## Instructions
 
 Follow the steps below to manipulate the strings and assign the values to the variables below and get the tests to pass.
 
-**1.** Below, we have a sentance whose cases are all over the place. Let's normailze the cases and make everything lower case except the first letter in the sentence. **hint:** *there is a string method that does this*
+**1.** Below, we have a sentence whose cases are all over the place. Let's normalize the cases and make everything lower case except the first letter in the sentence. **hint:** *there is a string method that does this*
 
 
 ```python
@@ -57,7 +57,7 @@ flatiron_mantra
 
 
 
-**3.** The next thing we want to do is practice turning other data types into strings. Below, we have a number `1234`, which happens to be our street number in our address, which is a string. So, let's turn that into a string so we can evenutally concatenate it onto our address.
+**3.** The next thing we want to do is practice turning other data types into strings. Below, we have a number `1234`, which happens to be our street number in our address, which is a string. So, let's turn the number into a string so we can eventually add it to our address. The process of linking different strings together is called **concatenation**. 
 
 
 ```python
@@ -79,7 +79,7 @@ num_to_string
 
 
 
-**4.** Let's take the `num_to_string` and add it to the beginning of our street address below. We need to concatenate the variable to the beginning of our string so that we have our full address all in one string and assinged to the variable `full_address`. **hint:** `None` *is a placeholder in the below code for you to edit*
+**4.** Let's take the `num_to_string` and add it to the beginning of our street address below. We need to concatenate the variable to the beginning of our string so that we have our full address all in one string and assigned to the variable `full_address`. **hint:** `None` *is a placeholder in the below code for you to edit*
 
 
 ```python
@@ -101,9 +101,9 @@ full_address
 
 
 
-**5.** Finally, let's replace some of the characters in a string. Let's say Bart is upset with his family and want's to be adopted by the Flanders family. How would you replace his last name?
+**5.** Finally, let's replace some of the characters in a string. Let's say Bart is upset with his family and wants to be adopted by the Flanders family. How would you replace his last name?
 
-** Hint:** We did not directly cover this method in the lesson, but is an intuitive concept and worth noting. Check out the string helper docstring for a list of available methods. 
+** Hint:** We did not directly cover this method in the lesson. Check out the string helper docstring for a list of available methods. 
 
 
 ```python
