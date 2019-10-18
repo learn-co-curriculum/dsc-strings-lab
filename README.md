@@ -6,8 +6,8 @@ Okay, we have learned about our first data type, the String! Now let's do a litt
 
 ## Objectives
 You will be able to:
-* Understand and use the data type, strings
-* Understand, explain and use the correct data types for various types of information (strings)
+* Apply string methods to make changes to a string
+* Use concatenation to combine strings
 
 ## Instructions
 
@@ -75,7 +75,7 @@ full_address
 
 **5.** Finally, let's replace some of the characters in a string. Let's say Bart is upset with his family and wants to be adopted by the Flanders family. How would you replace his last name?
 
-** Hint:** We did not directly cover this method in the lesson. Check out the string helper docstring for a list of available methods. 
+**Hint:** We did not directly cover this method in the lesson. Check out the string helper docstring for a list of available methods. 
 
 
 ```python
