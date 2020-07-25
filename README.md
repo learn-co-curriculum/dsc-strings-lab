@@ -11,7 +11,7 @@ You will be able to:
 
 ## Instructions
 
-Follow the steps below to manipulate the strings and assign the values to the variables below and get the tests to pass.
+Follow the steps below to manipulate the strings and assign the values to the variables below.
 
 **1.** Below, we have a sentence whose cases are all over the place. Let's normalize the cases and make everything lower case except the first letter in the sentence. **hint:** *there is a string method that does this*
 
