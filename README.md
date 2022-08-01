@@ -1,11 +1,12 @@
-
 # Introduction to Variables: Strings - Lab
 
 ## Introduction
 Okay, we have learned about our first data type, the String! Now let's do a little practice with strings. We'll use the methods and functions we introduced in the previous lesson to flex our string-manipulating muscles!
 
 ## Objectives
+
 You will be able to:
+
 * Apply string methods to make changes to a string
 * Use concatenation to combine strings
 
