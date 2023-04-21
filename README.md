@@ -84,14 +84,14 @@ num_to_string
 
 
 ```python
-full_address = None + " Abc street, Hometown USA"
+full_address = f"{None} Abc street, Hometown USA"
 full_address
 ```
 
 
 ```python
 # __SOLUTION__ 
-full_address = num_to_string + " Abc street, Hometown USA"
+full_address = f"{num_to_string} Abc street, Hometown USA"
 full_address
 ```
 
@@ -142,10 +142,8 @@ help(str)
      |  __eq__(self, value, /)
      |      Return self==value.
      |  
-     |  __format__(...)
-     |      S.__format__(format_spec) -> str
-     |      
-     |      Return a formatted version of S as described by format_spec.
+     |  __format__(self, format_spec, /)
+     |      Return a formatted version of the string as described by format_spec.
      |  
      |  __ge__(self, value, /)
      |      Return self>=value.
@@ -180,13 +178,10 @@ help(str)
      |      Return self%value.
      |  
      |  __mul__(self, value, /)
-     |      Return self*value.n
+     |      Return self*value.
      |  
      |  __ne__(self, value, /)
      |      Return self!=value.
-     |  
-     |  __new__(*args, **kwargs) from builtins.type
-     |      Create and return a new object.  See help(type) for accurate signature.
      |  
      |  __repr__(self, /)
      |      Return repr(self).
@@ -195,30 +190,27 @@ help(str)
      |      Return value%self.
      |  
      |  __rmul__(self, value, /)
-     |      Return self*value.
+     |      Return value*self.
      |  
-     |  __sizeof__(...)
-     |      S.__sizeof__() -> size of S in memory, in bytes
+     |  __sizeof__(self, /)
+     |      Return the size of the string in memory, in bytes.
      |  
      |  __str__(self, /)
      |      Return str(self).
      |  
-     |  capitalize(...)
-     |      S.capitalize() -> str
+     |  capitalize(self, /)
+     |      Return a capitalized version of the string.
      |      
-     |      Return a capitalized version of S, i.e. make the first character
-     |      have upper case and the rest lower case.
+     |      More specifically, make the first character have upper case and the rest lower
+     |      case.
      |  
-     |  casefold(...)
-     |      S.casefold() -> str
-     |      
-     |      Return a version of S suitable for caseless comparisons.
+     |  casefold(self, /)
+     |      Return a version of the string suitable for caseless comparisons.
      |  
-     |  center(...)
-     |      S.center(width[, fillchar]) -> str
+     |  center(self, width, fillchar=' ', /)
+     |      Return a centered string of length width.
      |      
-     |      Return S centered in a string of length width. Padding is
-     |      done using the specified fill character (default is a space)
+     |      Padding is done using the specified fill character (default is a space).
      |  
      |  count(...)
      |      S.count(sub[, start[, end]]) -> int
@@ -227,15 +219,17 @@ help(str)
      |      string S[start:end].  Optional arguments start and end are
      |      interpreted as in slice notation.
      |  
-     |  encode(...)
-     |      S.encode(encoding='utf-8', errors='strict') -> bytes
+     |  encode(self, /, encoding='utf-8', errors='strict')
+     |      Encode the string using the codec registered for encoding.
      |      
-     |      Encode S using the codec registered for encoding. Default encoding
-     |      is 'utf-8'. errors may be given to set a different error
-     |      handling scheme. Default is 'strict' meaning that encoding errors raise
-     |      a UnicodeEncodeError. Other possible values are 'ignore', 'replace' and
-     |      'xmlcharrefreplace' as well as any other name registered with
-     |      codecs.register_error that can handle UnicodeEncodeErrors.
+     |      encoding
+     |        The encoding in which to encode the string.
+     |      errors
+     |        The error handling scheme to use for encoding errors.
+     |        The default is 'strict' meaning that encoding errors raise a
+     |        UnicodeEncodeError.  Other possible values are 'ignore', 'replace' and
+     |        'xmlcharrefreplace' as well as any other name registered with
+     |        codecs.register_error that can handle UnicodeEncodeErrors.
      |  
      |  endswith(...)
      |      S.endswith(suffix[, start[, end]]) -> bool
@@ -245,10 +239,9 @@ help(str)
      |      With optional end, stop comparing S at that position.
      |      suffix can also be a tuple of strings to try.
      |  
-     |  expandtabs(...)
-     |      S.expandtabs(tabsize=8) -> str
+     |  expandtabs(self, /, tabsize=8)
+     |      Return a copy where all tab characters are expanded using spaces.
      |      
-     |      Return a copy of S where all tab characters are expanded using spaces.
      |      If tabsize is not given, a tab size of 8 characters is assumed.
      |  
      |  find(...)
@@ -275,119 +268,137 @@ help(str)
      |  index(...)
      |      S.index(sub[, start[, end]]) -> int
      |      
-     |      Return the lowest index in S where substring sub is found, 
+     |      Return the lowest index in S where substring sub is found,
      |      such that sub is contained within S[start:end].  Optional
      |      arguments start and end are interpreted as in slice notation.
      |      
      |      Raises ValueError when the substring is not found.
      |  
-     |  isalnum(...)
-     |      S.isalnum() -> bool
+     |  isalnum(self, /)
+     |      Return True if the string is an alpha-numeric string, False otherwise.
      |      
-     |      Return True if all characters in S are alphanumeric
-     |      and there is at least one character in S, False otherwise.
+     |      A string is alpha-numeric if all characters in the string are alpha-numeric and
+     |      there is at least one character in the string.
      |  
-     |  isalpha(...)
-     |      S.isalpha() -> bool
+     |  isalpha(self, /)
+     |      Return True if the string is an alphabetic string, False otherwise.
      |      
-     |      Return True if all characters in S are alphabetic
-     |      and there is at least one character in S, False otherwise.
+     |      A string is alphabetic if all characters in the string are alphabetic and there
+     |      is at least one character in the string.
      |  
-     |  isdecimal(...)
-     |      S.isdecimal() -> bool
+     |  isascii(self, /)
+     |      Return True if all characters in the string are ASCII, False otherwise.
      |      
-     |      Return True if there are only decimal characters in S,
-     |      False otherwise.
+     |      ASCII characters have code points in the range U+0000-U+007F.
+     |      Empty string is ASCII too.
      |  
-     |  isdigit(...)
-     |      S.isdigit() -> bool
+     |  isdecimal(self, /)
+     |      Return True if the string is a decimal string, False otherwise.
      |      
-     |      Return True if all characters in S are digits
-     |      and there is at least one character in S, False otherwise.
+     |      A string is a decimal string if all characters in the string are decimal and
+     |      there is at least one character in the string.
      |  
-     |  isidentifier(...)
-     |      S.isidentifier() -> bool
+     |  isdigit(self, /)
+     |      Return True if the string is a digit string, False otherwise.
      |      
-     |      Return True if S is a valid identifier according
-     |      to the language definition.
-     |      
-     |      Use keyword.iskeyword() to test for reserved identifiers
-     |      such as "def" and "class".
+     |      A string is a digit string if all characters in the string are digits and there
+     |      is at least one character in the string.
      |  
-     |  islower(...)
-     |      S.islower() -> bool
+     |  isidentifier(self, /)
+     |      Return True if the string is a valid Python identifier, False otherwise.
      |      
-     |      Return True if all cased characters in S are lowercase and there is
-     |      at least one cased character in S, False otherwise.
+     |      Call keyword.iskeyword(s) to test whether string s is a reserved identifier,
+     |      such as "def" or "class".
      |  
-     |  isnumeric(...)
-     |      S.isnumeric() -> bool
+     |  islower(self, /)
+     |      Return True if the string is a lowercase string, False otherwise.
      |      
-     |      Return True if there are only numeric characters in S,
-     |      False otherwise.
+     |      A string is lowercase if all cased characters in the string are lowercase and
+     |      there is at least one cased character in the string.
      |  
-     |  isprintable(...)
-     |      S.isprintable() -> bool
+     |  isnumeric(self, /)
+     |      Return True if the string is a numeric string, False otherwise.
      |      
-     |      Return True if all characters in S are considered
-     |      printable in repr() or S is empty, False otherwise.
+     |      A string is numeric if all characters in the string are numeric and there is at
+     |      least one character in the string.
      |  
-     |  isspace(...)
-     |      S.isspace() -> bool
+     |  isprintable(self, /)
+     |      Return True if the string is printable, False otherwise.
      |      
-     |      Return True if all characters in S are whitespace
-     |      and there is at least one character in S, False otherwise.
+     |      A string is printable if all of its characters are considered printable in
+     |      repr() or if it is empty.
      |  
-     |  istitle(...)
-     |      S.istitle() -> bool
+     |  isspace(self, /)
+     |      Return True if the string is a whitespace string, False otherwise.
      |      
-     |      Return True if S is a titlecased string and there is at least one
-     |      character in S, i.e. upper- and titlecase characters may only
+     |      A string is whitespace if all characters in the string are whitespace and there
+     |      is at least one character in the string.
+     |  
+     |  istitle(self, /)
+     |      Return True if the string is a title-cased string, False otherwise.
+     |      
+     |      In a title-cased string, upper- and title-case characters may only
      |      follow uncased characters and lowercase characters only cased ones.
-     |      Return False otherwise.
      |  
-     |  isupper(...)
-     |      S.isupper() -> bool
+     |  isupper(self, /)
+     |      Return True if the string is an uppercase string, False otherwise.
      |      
-     |      Return True if all cased characters in S are uppercase and there is
-     |      at least one cased character in S, False otherwise.
+     |      A string is uppercase if all cased characters in the string are uppercase and
+     |      there is at least one cased character in the string.
      |  
-     |  join(...)
-     |      S.join(iterable) -> str
+     |  join(self, iterable, /)
+     |      Concatenate any number of strings.
      |      
-     |      Return a string which is the concatenation of the strings in the
-     |      iterable.  The separator between elements is S.
+     |      The string whose method is called is inserted in between each given string.
+     |      The result is returned as a new string.
+     |      
+     |      Example: '.'.join(['ab', 'pq', 'rs']) -> 'ab.pq.rs'
      |  
-     |  ljust(...)
-     |      S.ljust(width[, fillchar]) -> str
+     |  ljust(self, width, fillchar=' ', /)
+     |      Return a left-justified string of length width.
      |      
-     |      Return S left-justified in a Unicode string of length width. Padding is
-     |      done using the specified fill character (default is a space).
+     |      Padding is done using the specified fill character (default is a space).
      |  
-     |  lower(...)
-     |      S.lower() -> str
-     |      
-     |      Return a copy of the string S converted to lowercase.
+     |  lower(self, /)
+     |      Return a copy of the string converted to lowercase.
      |  
-     |  lstrip(...)
-     |      S.lstrip([chars]) -> str
+     |  lstrip(self, chars=None, /)
+     |      Return a copy of the string with leading whitespace removed.
      |      
-     |      Return a copy of the string S with leading whitespace removed.
      |      If chars is given and not None, remove characters in chars instead.
      |  
-     |  partition(...)
-     |      S.partition(sep) -> (head, sep, tail)
+     |  partition(self, sep, /)
+     |      Partition the string into three parts using the given separator.
      |      
-     |      Search for the separator sep in S, and return the part before it,
-     |      the separator itself, and the part after it.  If the separator is not
-     |      found, return S and two empty strings.
+     |      This will search for the separator in the string.  If the separator is found,
+     |      returns a 3-tuple containing the part before the separator, the separator
+     |      itself, and the part after it.
+     |      
+     |      If the separator is not found, returns a 3-tuple containing the original string
+     |      and two empty strings.
      |  
-     |  replace(...)
-     |      S.replace(old, new[, count]) -> str
+     |  removeprefix(self, prefix, /)
+     |      Return a str with the given prefix string removed if present.
      |      
-     |      Return a copy of S with all occurrences of substring
-     |      old replaced by new.  If the optional argument count is
-     |      given, only the first count occurrences are replaced.
+     |      If the string starts with the prefix string, return string[len(prefix):].
+     |      Otherwise, return a copy of the original string.
+     |  
+     |  removesuffix(self, suffix, /)
+     |      Return a str with the given suffix string removed if present.
+     |      
+     |      If the string ends with the suffix string and that suffix is not empty,
+     |      return string[:-len(suffix)]. Otherwise, return a copy of the original
+     |      string.
+     |  
+     |  replace(self, old, new, count=-1, /)
+     |      Return a copy with all occurrences of substring old replaced by new.
+     |      
+     |        count
+     |          Maximum number of occurrences to replace.
+     |          -1 (the default value) means replace all occurrences.
+     |      
+     |      If the optional argument count is given, only the first count occurrences are
+     |      replaced.
      |  
      |  rfind(...)
      |      S.rfind(sub[, start[, end]]) -> int
@@ -407,49 +418,55 @@ help(str)
      |      
      |      Raises ValueError when the substring is not found.
      |  
-     |  rjust(...)
-     |      S.rjust(width[, fillchar]) -> str
+     |  rjust(self, width, fillchar=' ', /)
+     |      Return a right-justified string of length width.
      |      
-     |      Return S right-justified in a string of length width. Padding is
-     |      done using the specified fill character (default is a space).
+     |      Padding is done using the specified fill character (default is a space).
      |  
-     |  rpartition(...)
-     |      S.rpartition(sep) -> (head, sep, tail)
+     |  rpartition(self, sep, /)
+     |      Partition the string into three parts using the given separator.
      |      
-     |      Search for the separator sep in S, starting at the end of S, and return
-     |      the part before it, the separator itself, and the part after it.  If the
-     |      separator is not found, return two empty strings and S.
+     |      This will search for the separator in the string, starting at the end. If
+     |      the separator is found, returns a 3-tuple containing the part before the
+     |      separator, the separator itself, and the part after it.
+     |      
+     |      If the separator is not found, returns a 3-tuple containing two empty strings
+     |      and the original string.
      |  
-     |  rsplit(...)
-     |      S.rsplit(sep=None, maxsplit=-1) -> list of strings
+     |  rsplit(self, /, sep=None, maxsplit=-1)
+     |      Return a list of the words in the string, using sep as the delimiter string.
      |      
-     |      Return a list of the words in S, using sep as the
-     |      delimiter string, starting at the end of the string and
-     |      working to the front.  If maxsplit is given, at most maxsplit
-     |      splits are done. If sep is not specified, any whitespace string
-     |      is a separator.
+     |        sep
+     |          The delimiter according which to split the string.
+     |          None (the default value) means split according to any whitespace,
+     |          and discard empty strings from the result.
+     |        maxsplit
+     |          Maximum number of splits to do.
+     |          -1 (the default value) means no limit.
+     |      
+     |      Splits are done starting at the end of the string and working to the front.
      |  
-     |  rstrip(...)
-     |      S.rstrip([chars]) -> str
+     |  rstrip(self, chars=None, /)
+     |      Return a copy of the string with trailing whitespace removed.
      |      
-     |      Return a copy of the string S with trailing whitespace removed.
      |      If chars is given and not None, remove characters in chars instead.
      |  
-     |  split(...)
-     |      S.split(sep=None, maxsplit=-1) -> list of strings
+     |  split(self, /, sep=None, maxsplit=-1)
+     |      Return a list of the words in the string, using sep as the delimiter string.
      |      
-     |      Return a list of the words in S, using sep as the
-     |      delimiter string.  If maxsplit is given, at most maxsplit
-     |      splits are done. If sep is not specified or is None, any
-     |      whitespace string is a separator and empty strings are
-     |      removed from the result.
+     |      sep
+     |        The delimiter according which to split the string.
+     |        None (the default value) means split according to any whitespace,
+     |        and discard empty strings from the result.
+     |      maxsplit
+     |        Maximum number of splits to do.
+     |        -1 (the default value) means no limit.
      |  
-     |  splitlines(...)
-     |      S.splitlines([keepends]) -> list of strings
+     |  splitlines(self, /, keepends=False)
+     |      Return a list of the lines in the string, breaking at line boundaries.
      |      
-     |      Return a list of the lines in S, breaking at line boundaries.
-     |      Line breaks are not included in the resulting list unless keepends
-     |      is given and true.
+     |      Line breaks are not included in the resulting list unless keepends is given and
+     |      true.
      |  
      |  startswith(...)
      |      S.startswith(prefix[, start[, end]]) -> bool
@@ -459,50 +476,46 @@ help(str)
      |      With optional end, stop comparing S at that position.
      |      prefix can also be a tuple of strings to try.
      |  
-     |  strip(...)
-     |      S.strip([chars]) -> str
+     |  strip(self, chars=None, /)
+     |      Return a copy of the string with leading and trailing whitespace removed.
      |      
-     |      Return a copy of the string S with leading and trailing
-     |      whitespace removed.
      |      If chars is given and not None, remove characters in chars instead.
      |  
-     |  swapcase(...)
-     |      S.swapcase() -> str
-     |      
-     |      Return a copy of S with uppercase characters converted to lowercase
-     |      and vice versa.
+     |  swapcase(self, /)
+     |      Convert uppercase characters to lowercase and lowercase characters to uppercase.
      |  
-     |  title(...)
-     |      S.title() -> str
+     |  title(self, /)
+     |      Return a version of the string where each word is titlecased.
      |      
-     |      Return a titlecased version of S, i.e. words start with title case
-     |      characters, all remaining cased characters have lower case.
+     |      More specifically, words start with uppercased characters and all remaining
+     |      cased characters have lower case.
      |  
-     |  translate(...)
-     |      S.translate(table) -> str
+     |  translate(self, table, /)
+     |      Replace each character in the string using the given translation table.
      |      
-     |      Return a copy of the string S in which each character has been mapped
-     |      through the given translation table. The table must implement
-     |      lookup/indexing via __getitem__, for instance a dictionary or list,
-     |      mapping Unicode ordinals to Unicode ordinals, strings, or None. If
-     |      this operation raises LookupError, the character is left untouched.
-     |      Characters mapped to None are deleted.
+     |        table
+     |          Translation table, which must be a mapping of Unicode ordinals to
+     |          Unicode ordinals, strings, or None.
+     |      
+     |      The table must implement lookup/indexing via __getitem__, for instance a
+     |      dictionary or list.  If this operation raises LookupError, the character is
+     |      left untouched.  Characters mapped to None are deleted.
      |  
-     |  upper(...)
-     |      S.upper() -> str
-     |      
-     |      Return a copy of S converted to uppercase.
+     |  upper(self, /)
+     |      Return a copy of the string converted to uppercase.
      |  
-     |  zfill(...)
-     |      S.zfill(width) -> str
+     |  zfill(self, width, /)
+     |      Pad a numeric string with zeros on the left, to fill a field of the given width.
      |      
-     |      Pad a numeric string S with zeros on the left, to fill a field
-     |      of the specified width. The string S is never truncated.
+     |      The string is never truncated.
      |  
      |  ----------------------------------------------------------------------
      |  Static methods defined here:
      |  
-     |  maketrans(x, y=None, z=None, /)
+     |  __new__(*args, **kwargs) from builtins.type
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |  
+     |  maketrans(...)
      |      Return a translation table usable for str.translate().
      |      
      |      If there is only one argument, it must be a dictionary mapping Unicode
